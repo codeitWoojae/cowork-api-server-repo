@@ -22,7 +22,7 @@ app.get('/api/members/:id', (req, res) => {
   if (member) {
     res.send(member);
   } else {
-    res.status(404).send({ message: 'There is no such member' });
+    res.status(404).send({ message: 'There is no member with the id!!' });
   }
 });
 
