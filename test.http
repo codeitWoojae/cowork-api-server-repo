@@ -31,3 +31,6 @@ Content-Type: application/json
     "birthday": "1994/11/08",
     "profileImage": "profile1.png"
 }
+
+###
+DELETE http://localhost:3000/api/members/3
