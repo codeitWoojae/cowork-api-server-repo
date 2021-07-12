@@ -4,6 +4,8 @@ const app = express();
 
 const members = require('./members');
 
+app.use(express.json());
+
 app.get('/api/members', (req, res) => {
   const { team } = req.query;
   if (team) {
@@ -25,7 +27,9 @@ app.get('/api/members/:id', (req, res) => {
 });
 
 app.post('/api/members', (req, res) => {
-  console.log(req.body);
+  const newMember = req.body;
+  members.push(newMember);
+  res.send(newMember);
 });
 
 app.listen(3000, () => {
