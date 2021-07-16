@@ -1,4 +1,4 @@
-GET http://localhost:3000/api/members?team=engineering
+GET http://localhost:3000/api/members/11
 
 ###
 POST http://localhost:3000/api/members
