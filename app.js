@@ -21,7 +21,7 @@ app.get('/api/members', async (req, res) => {
 
 app.get('/api/members/:id', async (req, res) => {
   const { id } = req.params;
-  const member = await Member.findOne( { where: { id } });
+  const member = await Member.findOne({ where: { id } });
   if (member) {
     res.send(member);
   } else {
@@ -72,6 +72,6 @@ app.delete('/api/members/:id', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Server is listening...');
 });
