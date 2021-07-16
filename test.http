@@ -16,10 +16,10 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/members/1
+PUT http://localhost:3000/api/members/100
 Content-Type: application/json
 
-{ "position": "Server Developer" }
+{ "name": "David" }
 
 ###
 DELETE http://localhost:3000/api/members/3
