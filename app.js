@@ -29,10 +29,11 @@ app.get('/api/members/:id', async (req, res) => {
   }
 });
 
-app.post('/api/members', (req, res) => {
+app.post('/api/members', async (req, res) => {
   const newMember = req.body;
-  members.push(newMember);
-  res.send(newMember);
+  const member = Member.build(newMember);
+  await member.save();
+  res.send(member);
 });
 
 app.put('/api/members/:id', (req, res) => {
