@@ -1,4 +1,4 @@
-GET http://localhost:3000/api/members/1
+GET http://localhost:3000/api/members
 
 ###
 POST http://localhost:3000/api/members
@@ -22,4 +22,4 @@ Content-Type: application/json
 { "name": "David" }
 
 ###
-DELETE http://localhost:3000/api/members/3
+DELETE http://localhost:3000/api/members/12

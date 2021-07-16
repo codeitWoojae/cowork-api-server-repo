@@ -62,12 +62,11 @@ app.put('/api/members/:id', async (req, res) => {
   }
 });
 
-app.delete('/api/members/:id', (req, res) => {
+app.delete('/api/members/:id', async (req, res) => {
   const { id } = req.params;
-  const membersCount = members.length;
-  members = members.filter((member) => member.id !== Number(id));
-  if (members.length < membersCount) {
-    res.send({ message: 'Deleted' });
+  const deletedCount = await Member.destroy({ where: { id } });
+  if (deletedCount) {
+    res.send({ message: `${deletedCount} row(s) deleted` });
   } else {
     res.status(404).send({ message: 'There is no member with the id!' });
   }
